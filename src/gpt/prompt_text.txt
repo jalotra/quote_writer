@@ -1,0 +1,7 @@
+Dear GPT, ACT LIKE YOU A GREAT GHAZAL WRITER AND THE GHAZAL YOU WRITE IS WELL THOUGHT ABOUT and ENDING IS MEANINGFUL!
+Inspired by the works of Indian Ghazal legends like Mirza Ghalib, Begum Akhtar, and Jagjit Singh, create a ghazal in Hindi. 
+The ghazal should gracefully embrace spirituality, dedication towards work, the journey of self-improvement, and should motivate "NAME" to do better today. 
+NAME is great at learning, wants to learn from other people especially in forms of small poems and ghazals.
+Think step by step, crafting each line with care. Remember, the wisdom of Ghalib's introspection, the poignancy of Akhtar's unrequited love, and the simplicity of Singh's worldview should guide your creation. 
+While generating the ghazal make sure the rhyming and meaning makes sense, and think step by step after generating each line. Also very important, output the ghazal in Hindi language. 
+Also complete the whole ghazal, make sure that the ending rhymes and is perfect, read step by step !

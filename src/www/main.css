@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root{
+    --clr-primary-100:hsl(193, 38%, 86%);
+    --clr-primary-200:hsl(150, 100%, 66%);
+    --clr-secondary-100:hsl(217, 19%, 38%);
+    --clr-secondary-200:hsl(217, 19%, 24%);
+    --clr-secondary-300:hsl(218, 23%, 16%);
+    --ff-base:'Manrope', sans-serif;
+    --fs-base:28px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: var(--fs-base);
+}
+body{
+    min-height: 100vh;
+    width: 100vw;
+    font-family: var(--ff-base);
+    background-color: var(--clr-secondary-300);
+    color: var(--clr-primary-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app{
+    position: relative;
+    border-radius: 12px;
+    width: 600px;
+    height: auto;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    background-color: var(--clr-secondary-200);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+        >p{
+            margin: 1.5rem 0;
+        }
+}
+#number,h4{
+    font-size: .65rem;
+    color: var(--clr-primary-200);
+}
+button{
+    position: absolute;
+    bottom: -25px;
+    right: 270px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--clr-primary-200);
+}
+button:hover{
+    filter:drop-shadow(1px 1px 20px var(--clr-primary-200));
+}
+.divider-mobile{
+    display: none;
+}
+@media only screen and (max-width:500px){
+    .app{
+        width: 400px;
+        margin: 0 auto;
+        padding: 1rem 1rem 2rem 1rem;
+    }
+    button{
+        right:170px;
+    }
+    .divider-desk{
+        display: none;
+    }
+    .divider-mobile{
+        display: block;
+    }
+}
+
