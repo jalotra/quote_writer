@@ -1,10 +1,14 @@
 const message = document.getElementById("message");
 const numer = document.getElementById('number');
 const author = document.getElementById('author');
+const urlParams = new URLSearchParams(window.location.search);
 
-let clientName = window.location.pathname.split("/")[1]
+let clientName = urlParams.get('name');
+if(clientName == null){
+    clientName = "Dear";
+}
 
-fetch(`http://localhost:80/motivate/${clientName}`)
+fetch(`http://3.84.52.187:80/motivate/${clientName}`)
         .then(res => res.json())
         .then(data => {
             message.innerText = data.quote;

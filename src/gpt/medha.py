@@ -22,6 +22,7 @@ AVAILABLE_MODELS = [
     "gpt-3.5-turbo-0301",
     "text-davinci-003",
     "code-davinci-002",
+    "gpt-4-1106-preview"
 ]
 
 
@@ -52,7 +53,7 @@ def chat_generate_text(
     openai.api_key = openai_api_key
 
     # Change name in prompt 
-    prompt.replace("NAME", name);
+    prompt = prompt.replace("NAME", name);
 
     messages = [
         {"role": "system", "content": f"{system_prompt}"},
@@ -102,7 +103,7 @@ def main(
     name : Optional[str] = None,
     prompt: Optional[str] = None,
     api_key: Optional[str] = None,
-    model: str = "gpt-4",
+    model: str = "gpt-4-1106-preview",
     system_prompt: str = "You are a helpful assistant.",
     temperature: float = 0.5,
     max_tokens: int = 256,
@@ -144,6 +145,9 @@ def main(
 
     assert len(prompts) > 0, "No prompts found."
     validate_model(model)
+
+    print(prompt)
+    
 
     generated_texts = chat_generate_text(
         name,
