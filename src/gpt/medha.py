@@ -52,9 +52,6 @@ def chat_generate_text(
 
     openai.api_key = openai_api_key
 
-    # Change name in prompt 
-    prompt = prompt.replace("NAME", name);
-
     messages = [
         {"role": "system", "content": f"{system_prompt}"},
         {"role": "user", "content": prompt},
@@ -119,10 +116,13 @@ def main(
         Path(FOLDER_NAME).mkdir(parents=True)
     
     date_today = datetime.today().strftime('%Y-%m-%d')
+    quote = json.loads(open(os.path.join(FOLDER_NAME, date_today)).read())[0]
+    quote = quote.replace("NAME", name)
+
     if os.path.exists(os.path.join(FOLDER_NAME, date_today)):
         return {
         "id" : str(date_today),
-        "quote" : json.loads(open(os.path.join(FOLDER_NAME, date_today)).read())[0],
+        "quote" : quote,
         "author" : f"For {name} with love from GPT !"
     }
 
@@ -164,10 +164,12 @@ def main(
     # Save the output 
     with open(os.path.join(FOLDER_NAME, date_today), "w") as f:
         f.write(json.dumps(generated_texts))
+    quote = str(generated_texts[0])
+    quote = quote.replace("NAME", name)
     
     return {
         "id" : str(date_today),
-        "quote" : str(generated_texts[0]),
+        "quote" : quote,
         "author" : f"For {name} with love from GPT!"
     }
 
