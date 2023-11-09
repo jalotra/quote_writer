@@ -116,10 +116,10 @@ def main(
         Path(FOLDER_NAME).mkdir(parents=True)
     
     date_today = datetime.today().strftime('%Y-%m-%d')
-    quote = json.loads(open(os.path.join(FOLDER_NAME, date_today)).read())[0]
-    quote = quote.replace("NAME", name)
 
     if os.path.exists(os.path.join(FOLDER_NAME, date_today)):
+        quote = json.loads(open(os.path.join(FOLDER_NAME, date_today)).read())[0]
+        quote = quote.replace("NAME", name)
         return {
         "id" : str(date_today),
         "quote" : quote,
