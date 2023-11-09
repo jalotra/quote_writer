@@ -6,12 +6,12 @@ load_dotenv(".env")
 from fastapi import FastAPI
 import uvicorn
 import os
-from gpt import medha
+from gpt import quote
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="www"), name="static")
-app.include_router(router=medha.router)
+app.include_router(router=quote.router)
 
 
 if __name__ == "__main__":
